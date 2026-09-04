@@ -1,0 +1,15 @@
+com\mycompany\guia8\datos\AlumnoMateriaDatos.class
+com\mycompany\guia8\interfaces\FrmAlumno$1.class
+com\mycompany\guia8\interfaces\FrmAlumno.class
+com\mycompany\guia8\beans\AlumnoBeans.class
+com\mycompany\guia8\interfaces\FrmMateria.class
+com\mycompany\guia8\interfaces\FrmAlumnoMateria$1.class
+com\mycompany\guia8\GUIA8.class
+com\mycompany\guia8\interfaces\FrmAlumnoMateria.class
+com\mycompany\guia8\interfaces\FrmMateria$1.class
+com\mycompany\guia8\datos\MateriaDatos.class
+com\mycompany\guia8\beans\AlumnoMateriaBeans.class
+com\mycompany\guia8\datos\AlumnoDatos.class
+com\mycompany\guia8\util\Conexion.class
+com\mycompany\guia8\interfaces\FrmMenuPrincipal.class
+com\mycompany\guia8\beans\MateriaBeans.class
