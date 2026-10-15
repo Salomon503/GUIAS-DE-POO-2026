@@ -1,0 +1,54 @@
+<%
+    String flashMsg  = (String) session.getAttribute("flashMsg");
+    String flashTipo = "success".equals(session.getAttribute("flashTipo")) ? "success" : "danger";
+    session.removeAttribute("flashMsg");
+    session.removeAttribute("flashTipo");
+%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= com.example.guia11bean.Util.h(titulo) %> | Guía Bean</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.jsp">
+                <i class="fa-solid fa-users me-2"></i>Guía Bean
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Mostrar menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link <%= "inicio".equals(activo) ? "active" : "" %>" href="index.jsp">
+                            <i class="fa-solid fa-house me-1"></i>Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= "ocupaciones".equals(activo) ? "active" : "" %>" href="ocupaciones.jsp">
+                            <i class="fa-solid fa-briefcase me-1"></i>Ocupaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= "personas".equals(activo) ? "active" : "" %>" href="personas.jsp">
+                            <i class="fa-solid fa-user me-1"></i>Personas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container flex-grow-1 pt-5 mt-4 mb-5">
+        <% if (flashMsg != null) { %>
+        <div class="alert alert-<%= flashTipo %> alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fa-solid <%= "success".equals(flashTipo) ? "fa-circle-check" : "fa-triangle-exclamation" %> me-2"></i>
+            <%= com.example.guia11bean.Util.h(flashMsg) %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+        <% } %>
